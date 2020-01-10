@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.bequietsoft.mob" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>MOB</name>
+<widget id="io.bequietsoft.freespace" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>freespace</name>
     <description>
-        MOB project version 0.0.1
+        Template project for web, desktop and mobile VR application using NodeJS, ThreeJS and MongoDB
     </description>
-    <author email="a807a7@gmail.com" href="http://bequit.io">
-        a807a7
+    <author email="a807a7@gmail.com" href="https://github.com/bequietsoft/freespace">
+        default
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />

@@ -1,0 +1,27 @@
+{
+  "name": "freespace",
+  "version": "1.0.0",
+  "description": "Template project for web, desktop and mobile VR application using NodeJS, ThreeJS and MongoDB",
+  "main": "server\\app.js",
+  "scripts": {
+    "dev": "nodemon server\\app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bequietsoft/freespace"
+  },
+  "keywords": [
+    "free",
+    "space"
+  ],
+  "author": "default",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
