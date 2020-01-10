@@ -1,6 +1,6 @@
-import * as THREE from "./three.module.js.js"
-import Material from "./material.js.js";
-import Vector from "./vector.js.js";
+import * as THREE from "./three.module.js"
+import Material from "./material.js";
+import Vector from "./vector.js";
 
 class Craft {
 

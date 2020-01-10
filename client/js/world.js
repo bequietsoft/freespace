@@ -1,8 +1,8 @@
-import * as THREE from "./three.module.js.js"
-import App from "./app.js.js";
-import Material from "./material.js.js";
-import Vector from "./vector.js.js";
-import Craft from "./craft.js.js";
+import * as THREE from "./three.module.js"
+import App from "./app.js";
+import Material from "./material.js";
+import Vector from "./vector.js";
+import Craft from "./craft.js";
 
 class World {
 	

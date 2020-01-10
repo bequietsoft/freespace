@@ -1,5 +1,5 @@
-import * as THREE from "./three.module.js.js"
-import App from "./app.js.js";
+import * as THREE from "./three.module.js"
+import App from "./app.js";
 
 class Mouse {
 	

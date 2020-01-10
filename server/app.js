@@ -1,3 +1,4 @@
+
 const path = require("path");
 const fs = require('fs');
 const express = require("express");
@@ -7,15 +8,16 @@ const public = path.normalize(__dirname + "/../client");
 
 
 app.get('/', function(req, res) {
-	//console.log(req.url);
+	console.log("/: " + req.url);
 	res.sendFile(path.join(public, "index.html"));
 });
 
 app.get('/*', function(req, res) {
-	//console.log(req.url);
-	res.sendfile(path.join(public, req.url));
+	console.log("/*: " + req.url);
+	res.sendFile(path.join(public, req.url));
 });
 
 app.listen(port, () => {
+	console.clear();
 	console.log("freespace server listening on port " + port);
 });

@@ -1,8 +1,8 @@
-import { log } from "./tools.js.js";
-import * as THREE from "./three.module.js.js"
-import Renderer from "./renderer.js.js";
-import World from "./world.js.js";
-import Mouse from "./mouse.js.js";
+import { log } from "./tools.js";
+import * as THREE from "./three.module.js"
+import Renderer from "./renderer.js";
+import World from "./world.js";
+import Mouse from "./mouse.js";
 
 class App {
 	
