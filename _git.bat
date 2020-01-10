@@ -3,20 +3,22 @@ REM GIT MENU
 ECHO OFF
 
 :MENU
-ECHO 1 - COMMIT`N`PUSH
-ECHO 2 - FETCH
-ECHO 3 - CLEAR
-ECHO 4 - INIT/COMMIT/PUSH
-ECHO 5 - NODEMON
+ECHO 1 - COMMIT
+ECHO 2 - PUSH
+ECHO 3 - FETCH
+ECHO 4 - CLEAR
+ECHO 5 - INIT
+ECHO 6 - NODEMON
 ECHO 0 - EXIT
 ECHO.
 
 SET /P M=": " 
-IF %M%==1 GOTO PUSH
-IF %M%==2 GOTO FETCH
-IF %M%==3 GOTO CLEAR
-IF %M%==4 GOTO INIT
-IF %M%==5 GOTO NODEMON
+IF %M%==1 GOTO COMMIT
+IF %M%==2 GOTO PUSH
+IF %M%==3 GOTO FETCH
+IF %M%==4 GOTO CLEAR
+IF %M%==5 GOTO INIT
+IF %M%==6 GOTO NODEMON
 IF %M%==0 GOTO EOF
 
 :COMMIT
@@ -28,12 +30,10 @@ ECHO.
 GOTO MENU
 
 :PUSH
-
 git log --oneline
 SET /P Msg="Commit: "
 git add .
 git commit -m "%Msg%"
-
 git push --set-upstream origin master
 ECHO.
 GOTO MENU
@@ -57,8 +57,8 @@ GOTO MENU
 :INIT
 git init
 git add .
-git commit -m "0000"
-git remote add origin https://github.com/bequietsoft/fart
+git commit -m "first commit"
+git remote add origin https://github.com/bequietsoft/freespace.git
 git push --set-upstream origin master
 ECHO.
 GOTO MENU
