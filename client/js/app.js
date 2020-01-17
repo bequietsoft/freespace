@@ -14,9 +14,9 @@ class App {
 			App.debug = undefined;
 			App.shadows = true;
 			App.smooth = 1;
-			App.ambient_color = new THREE.Color("rgb(240, 240, 235)");
-			App.fog_color = new THREE.Color("rgb(240, 240, 220)");
-			App.ground_color = new THREE.Color("rgb(240, 240, 120)");
+			App.ambient_color = new THREE.Color("rgb(200, 200, 200)");
+			App.fog_color = new THREE.Color("rgb(240, 240, 240)");
+			App.ground_color = new THREE.Color("rgb(200, 200, 200)");
 			App.light_color = new THREE.Color("rgb(255, 255, 255)");
 			App.shadow_map_size = 1024;
 			App.shadow_camera_size = 20;

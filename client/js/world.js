@@ -14,10 +14,11 @@ class World {
 		App.scene.background = new THREE.Color(App.ground_color);
 		App.scene.fog = new THREE.Fog(App.fog_color, App.far * App.fog, App.far);
 		
-		App.light00 = new THREE.AmbientLight(App.ambient_color, 0.25);
+		//App.light00 = new THREE.AmbientLight(App.ambient_color, 0.005);
 
 		App.light01 = new THREE.DirectionalLight(0xffffff, 1);
-		App.light01.position.set(10, 10, 10);
+		App.light01.position.set(0, 1, 0);
+		//App.light01.lookAt(0,0,0);
 		//App.light01.castShadow = true;
 		App.light01.shadow.mapSize.width = App.shadow_map_size;
 		App.light01.shadow.mapSize.height = App.shadow_map_size;
@@ -32,11 +33,12 @@ class World {
 			var geometry = new THREE.PlaneBufferGeometry(1, 1);
 			var planeMaterial = new THREE.MeshPhongMaterial();
 				planeMaterial.color = App.ground_color;
+				planeMaterial.side = THREE.DoubleSide;
 			var ground = new THREE.Mesh(geometry, planeMaterial);
 				ground.name = 'ground';
 				ground.position.set(0, 0, 0);
 				ground.rotation.x = - Math.PI/2;
-				ground.scale.set(App.far/8, App.far/4, 1);
+				ground.scale.set(5, 5, 1);
 				ground.castShadow = false;
 				ground.receiveShadow = true;
 		App.world.add(ground);
@@ -47,17 +49,18 @@ class World {
 			App.camera.root.add(App.camera.target);
 			App.camera.target.add(App.camera);
 			App.camera.position.x -= 10;
+			//App.camera.position.z += 5;
 			// App.camera.root.rotateY(Math.PI/);
-			App.camera.target.rotateZ(-Math.PI/10); 
+			App.camera.target.rotateZ(-Math.PI/2); 
 			App.camera.lookAt(App.camera.root.position);
 
 		App.scene.add(App.camera.root);
-		App.scene.add(App.light00);
+		//App.scene.add(App.light00);
 		App.scene.add(App.light01);
 		App.scene.add(App.world);	
 		
 		//World.helpers();
-		World.demo_scene_00();
+		//World.demo_scene_00();
 	}
 
 	static demo_scene_01() {
