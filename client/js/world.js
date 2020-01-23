@@ -1,5 +1,5 @@
 import * as THREE from "./three.module.js"
-import App from "./app.js";
+import App from "./client.js";
 import Material from "./material.js";
 import Vector from "./vector.js";
 import Craft from "./craft.js";
@@ -17,8 +17,8 @@ class World {
 		//App.light00 = new THREE.AmbientLight(App.ambient_color, 0.005);
 
 		App.light01 = new THREE.DirectionalLight(0xffffff, 1);
-		App.light01.position.set(0, 1, 0);
-		//App.light01.lookAt(0,0,0);
+		App.light01.position.set(1, 3, -1);
+		App.light01.lookAt(0, 0, 0);
 		//App.light01.castShadow = true;
 		App.light01.shadow.mapSize.width = App.shadow_map_size;
 		App.light01.shadow.mapSize.height = App.shadow_map_size;
@@ -60,13 +60,15 @@ class World {
 		App.scene.add(App.world);	
 		
 		//World.helpers();
-		//World.demo_scene_00();
+		//World.demo_scene_01();
+
 	}
 
 	static demo_scene_01() {
-		var m = Material.create("standard", "red");
-		App.scene.add(Craft.box(1, 1, 1, Vector.create(1, 0.5, 1), Vector.zero, m, true));
-		App.scene.add(Craft.sphere(0.1, Vector.create(0, 0.05, 0), Vector.zero, m, true, 32));
+		var m = Material.create("standard", "white");
+		//App.scene.add(Craft.box(1, 1, 1, Vector.create(1, 0.5, 1), Vector.zero, m, true));
+		App.light01.add(Craft.sphere(0.1, Vector.create(0, 0.05, 0), Vector.zero, m, true, 32));
+		//App.scene.add();
 	}
 
 	static demo_scene_00() {

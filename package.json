@@ -2,9 +2,9 @@
   "name": "freespace",
   "version": "1.0.0",
   "description": "Template project for web, desktop and mobile VR application using NodeJS, ThreeJS and MongoDB",
-  "main": "server\\app.js",
+  "main": "server\\server.js",
   "scripts": {
-    "dev": "nodemon server\\app.js"
+    "dev": "nodemon server\\server.js"
   },
   "repository": {
     "type": "git",

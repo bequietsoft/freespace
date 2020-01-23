@@ -1,5 +1,5 @@
 import * as THREE from "./three.module.js"
-import App from "./app.js";
+import App from "./client.js";
 
 export default class Renderer  {
 

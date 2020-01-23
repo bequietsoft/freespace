@@ -25,7 +25,11 @@ class App {
 			App.far = 50;
 			App.fog = 0.99;
 
+			//App.auth = false;
+
 		// #endregion
+
+		console.log(App.req("GET","/id", [ { name: "id", value: "?" } ], "data1"));
 
 		Renderer.init();
 		World.init();
@@ -33,6 +37,15 @@ class App {
 
 		App.onresize();
 		App.update();
+	}
+
+	static req(method, url, headers, data, )
+	{
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.open(method, url, false);
+		if(headers) headers.forEach(header => { xmlHttp.setRequestHeader(header.name, header.value)	}); 
+		if(data) xmlHttp.send(data); else xmlHttp.send();
+		return xmlHttp.responseText;
 	}
 
 	static onresize() {
