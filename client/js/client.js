@@ -1,5 +1,6 @@
 import { log } from "./tools.js";
 import * as THREE from "./three.module.js"
+import Console from "./console.js";
 import Renderer from "./renderer.js";
 import World from "./world.js";
 import Mouse from "./mouse.js";
@@ -29,9 +30,10 @@ class App {
 
 		// #endregion
 
-		console.log(App.req("GET","/id", [ { name: "id", value: "?" } ], "data1"));
+		//console.log(App.req("GET","/id", [ { name: "id", value: "?" } ], "data1"));
 
-		Renderer.init();
+		Console.init();
+		Renderer.init(this);
 		World.init();
 		Mouse.init();
 

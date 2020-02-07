@@ -3,8 +3,8 @@ import App from "./client.js";
 
 export default class Renderer  {
 
-	static init() {
-
+	static init(vapp) {
+		
 		var renderer = new THREE.WebGLRenderer({ antialias: true });
 			renderer.depth = App.far;
 			renderer.setClearColor(App.ambient_color, 1);
@@ -18,7 +18,7 @@ export default class Renderer  {
 			renderer.setClearColor(App.ambient_color, 1);
 			renderer.gammaInput = true;
 			renderer.gammaOutput = true;
-		
+
 		document.body.appendChild(renderer.domElement);
 		Renderer.instance = renderer;
 	}

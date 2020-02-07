@@ -1,13 +1,13 @@
 
-const path = require("path");
-const fs = require('fs');
 const express = require("express");
+const fs = require('fs');
+const path = require("path");
+
 const app = express();
 const port = 3000;
 const public = path.normalize(__dirname + "/../client");
 
-const only_local_client = true;	// только локальная работа
-
+const only_local_client = true;	
 
 
 app.get('/', function(req, res) {
