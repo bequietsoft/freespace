@@ -3,25 +3,23 @@ REM GIT MENU
 ECHO OFF
 
 :MENU
-ECHO 1 - COMMIT
-ECHO 2 - PUSH
-ECHO 3 - FETCH
-ECHO 4 - CLEAR
-ECHO 5 - INIT
-ECHO 6 - NODEMON
-ECHO 7 - RUN
-ECHO 0 - EXIT
+ECHO gc - COMMIT
+ECHO gp - PUSH
+ECHO gf - FETCH
+ECHO gr - RESET
+ECHO gi - INIT
+ECHO rs - RUN
+ECHO x - EXIT
 ECHO.
 
 SET /P M=": " 
-IF %M%==1 GOTO COMMIT
-IF %M%==2 GOTO PUSH
-IF %M%==3 GOTO FETCH
-IF %M%==4 GOTO CLEAR
-IF %M%==5 GOTO INIT
-IF %M%==6 GOTO NODEMON
-IF %M%==7 GOTO RUN
-IF %M%==0 GOTO EOF
+IF %M%==gc GOTO COMMIT
+IF %M%==gp GOTO PUSH
+IF %M%==gf GOTO FETCH
+IF %M%==gr GOTO RESET
+IF %M%==gi GOTO INIT
+IF %M%==rs GOTO RUN
+IF %M%==x GOTO EOF
 
 :COMMIT
 git log --oneline
@@ -46,7 +44,7 @@ git reset --hard origin/master
 ECHO.
 GOTO MENU
 
-:CLEAR
+:RESET
 git checkout --orphan temp_branch
 git add .
 git commit -am "start"
@@ -65,11 +63,6 @@ git push --set-upstream origin master
 npm init 
 npm install --save-dev nodemon
 npm install express
-ECHO.
-GOTO MENU
-
-:NODEMON
-nodemon
 ECHO.
 GOTO MENU
 

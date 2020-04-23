@@ -1,9 +1,10 @@
 import { log } from "./tools.js";
 import * as THREE from "./three.module.js"
-import Console from "./console.js";
+import Panel from "./panel.js";
 import Renderer from "./renderer.js";
 import World from "./world.js";
 import Mouse from "./mouse.js";
+import Keyboard from "./keyboard.js";
 
 class App {
 	
@@ -12,7 +13,7 @@ class App {
 		// #region variables
 
 			App.log = log;
-			App.debug = undefined;
+			App.debug = true;
 			App.shadows = true;
 			App.smooth = 1;
 			App.ambient_color = new THREE.Color("rgb(200, 200, 200)");
@@ -25,17 +26,20 @@ class App {
 			App.fov = 50;
 			App.far = 50;
 			App.fog = 0.99;
-
 			//App.auth = false;
 
 		// #endregion
 
 		//console.log(App.req("GET","/id", [ { name: "id", value: "?" } ], "data1"));
 
-		Console.init();
+		
 		Renderer.init(this);
+		Panel.init();
 		World.init();
 		Mouse.init();
+		Keyboard.init();
+
+		App.UI = { Panel: Panel };
 
 		App.onresize();
 		App.update();

@@ -16,6 +16,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/*', function(req, res) {
+	
 	if(only_local_client && req.headers.host != "127.0.0.1:" + port) return;
 	
 	switch (req.url) {
@@ -39,5 +40,5 @@ app.get('/*', function(req, res) {
 
 app.listen(port, () => {
 	console.clear();
-	console.log("freespace server listening on port " + port);
+	console.log("server listening on port " + port);
 });
