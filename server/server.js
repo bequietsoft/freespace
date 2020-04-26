@@ -7,7 +7,7 @@ const app = express();
 const port = 3000;
 const public = path.normalize(__dirname + "/../client");
 
-const only_local_client = true;	
+const only_local_client = false;	
 
 
 app.get('/', function(req, res) {
